@@ -1,0 +1,195 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-sec);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+.dot.idle  { background: var(--text-ter); }
+.dot.green { background: #38A169; box-shadow: 0 0 4px #38A16966; }
+.dot.red   { background: var(--red); box-shadow: 0 0 4px #E53E3E66; }
+
+.chars {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-ter);
+}
+
+/* ── Textarea wrapper ── */
+.textareaWrap {
+  position: relative;
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: var(--bg);
+}
+
+.textareaWrap.focused {
+  border-color: var(--gold-dim);
+  box-shadow: 0 0 0 1px var(--gold-glow);
+}
+
+.textareaWrap.hasError {
+  border-color: var(--red);
+  box-shadow: 0 0 0 1px var(--red-dim);
+}
+
+/* Line gutter */
+.gutter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 14px 8px;
+  background: var(--bg-2);
+  border-right: 1px solid var(--border);
+  min-width: 36px;
+  user-select: none;
+}
+
+.gutter span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text-ter);
+}
+
+.textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 14px 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-pri);
+  caret-color: var(--gold);
+  min-height: 160px;
+}
+
+.textarea::placeholder {
+  color: var(--text-ter);
+}
+
+/* ── Error ── */
+.error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--red-dim);
+  border: 1px solid var(--red);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #FC8181;
+}
+.errorIcon { font-size: 13px; }
+
+/* ── Hint ── */
+.hint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-ter);
+}
+.hintKey {
+  background: var(--bg-3);
+  border: 1px solid var(--border-hi);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 10px;
+  color: var(--text-sec);
+}
+.hintCode {
+  color: var(--gold);
+}
+
+/* ── Submit Button ── */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  background: var(--gold);
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #0A0A0B;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, opacity 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background 0.15s ease;
+}
+
+.btn:hover:not(:disabled)::before { background: rgba(255,255,255,0.08); }
+.btn:active:not(:disabled) { transform: scale(0.98); }
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn.loading {
+  background: var(--gold-dim);
+}
+
+.btnIcon {
+  font-size: 10px;
+}
+
+/* ── Spinner ── */
+.spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(10,10,11,0.3);
+  border-top-color: #0A0A0B;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

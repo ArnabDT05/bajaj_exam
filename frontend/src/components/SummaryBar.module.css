@@ -1,0 +1,102 @@
+.bar {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-sec);
+}
+
+.identity {
+  display: flex;
+  gap: 6px;
+}
+
+.idChip {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-ter);
+  background: var(--bg-3);
+  border: 1px solid var(--border-hi);
+  border-radius: 2px;
+  padding: 2px 7px;
+}
+
+/* ── Stats row ── */
+.stats {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.statVal {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-pri);
+  line-height: 1;
+}
+.statVal.mono {
+  font-size: 22px;
+}
+
+.stat.highlight .statVal { color: var(--gold); }
+.stat.danger    .statVal { color: var(--red);  }
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-ter);
+}
+
+.statDivider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+  margin: 0 8px;
+}
+
+.idBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.idLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-ter);
+}
+
+.idVal {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-sec);
+}

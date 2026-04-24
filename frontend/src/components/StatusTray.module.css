@@ -1,0 +1,119 @@
+.tray {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-sec);
+}
+
+.counts {
+  display: flex;
+  gap: 6px;
+}
+
+.countBadge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+
+.countBadge[data-type="invalid"] {
+  color: var(--red);
+  background: var(--red-dim);
+  border: 1px solid var(--red);
+}
+
+.countBadge[data-type="dup"] {
+  color: #ECC94B;
+  background: rgba(236,201,75,0.1);
+  border: 1px solid rgba(236,201,75,0.3);
+}
+
+/* ── Clean state ── */
+.clean {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-ter);
+}
+
+.cleanIcon {
+  color: var(--green);
+  font-size: 14px;
+}
+
+/* ── Sections ── */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.section {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.section:last-child { border-bottom: none; }
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-sec);
+  margin-bottom: 10px;
+}
+
+.sectionIcon[data-type="invalid"] { color: var(--red); }
+.sectionIcon[data-type="dup"]     { color: #ECC94B; }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.chip[data-type="invalid"] {
+  color: #FC8181;
+  background: var(--red-dim);
+  border: 1px solid color-mix(in srgb, var(--red) 40%, transparent);
+}
+
+.chip[data-type="dup"] {
+  color: #F6E05E;
+  background: rgba(236,201,75,0.08);
+  border: 1px solid rgba(236,201,75,0.25);
+}

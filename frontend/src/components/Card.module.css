@@ -1,0 +1,19 @@
+.card {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.card.accent {
+  border-color: var(--gold-dim);
+  box-shadow: 0 0 0 1px var(--gold-glow), var(--shadow-sm);
+}
+
+.card.danger {
+  border-color: var(--red);
+  box-shadow: 0 0 0 1px var(--red-dim), var(--shadow-sm);
+}

@@ -1,0 +1,78 @@
+.node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: calc(var(--depth, 0) * 0px); /* handled by children nesting */
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 6px;
+  border-radius: 2px;
+  transition: background 0.15s ease;
+  position: relative;
+}
+
+.row:hover {
+  background: var(--bg-3);
+}
+
+.connector {
+  display: none; /* replaced by children indentation */
+}
+
+.toggle {
+  background: var(--bg-3);
+  border: 1px solid var(--border-hi);
+  border-radius: 2px;
+  color: var(--gold);
+  font-size: 8px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.toggle:hover { background: var(--bg-2); }
+.toggle.collapsed { color: var(--text-sec); }
+
+.leaf {
+  color: var(--text-ter);
+  font-size: 8px;
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.nodeLabel {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-pri);
+  min-width: 20px;
+}
+
+.depthBadge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  background: var(--gold-glow);
+  border: 1px solid var(--gold-dim);
+  border-radius: 2px;
+  padding: 1px 5px;
+  margin-left: auto;
+}
+
+.children {
+  padding-left: 22px;
+  border-left: 1px solid var(--border-hi);
+  margin-left: 7px;
+  margin-top: 2px;
+}

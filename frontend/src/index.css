@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ── Tokens ──────────────────────────────────────────────────────────────── */
+:root {
+  --bg:         #0A0A0B;
+  --bg-1:       #0F0F11;
+  --bg-2:       #141416;
+  --bg-3:       #1A1A1D;
+  --border:     #1F1F22;
+  --border-hi:  #2A2A2E;
+  --gold:       #D4AF37;
+  --gold-dim:   #9E8227;
+  --gold-glow:  rgba(212, 175, 55, 0.12);
+  --red:        #E53E3E;
+  --red-dim:    rgba(229, 62, 62, 0.12);
+  --green:      #38A169;
+  --text-pri:   #F0F0F2;
+  --text-sec:   #7A7A82;
+  --text-ter:   #4A4A52;
+  --font-head:  'Space Grotesk', sans-serif;
+  --font-mono:  'JetBrains Mono', monospace;
+  --radius:     2px;
+  --shadow:     0 4px 24px rgba(0,0,0,0.5);
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body {
+  background: var(--bg);
+  color: var(--text-pri);
+  font-family: var(--font-head);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+::selection { background: var(--gold-glow); color: var(--gold); }
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-1); }
+::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 2px; }
+
+/* ── Utility classes ─────────────────────────────────────────────────────── */
+.mono   { font-family: var(--font-mono); }
+.gold   { color: var(--gold); }
+.muted  { color: var(--text-sec); }
+.danger { color: var(--red); }
